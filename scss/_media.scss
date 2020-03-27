@@ -1,0 +1,28 @@
+
+
+
+
+@media all and (min-width:750px){
+    form{
+        width: 40%;
+    }
+    
+    .fa-plus-circle{
+        margin: 0;
+    }
+    .filter{
+        margin-right: 3vw;
+    }
+}
+
+@media all and (min-width:1200px){
+    .filter{
+        margin-right: 15vw;
+    }
+    .list{
+        margin-left: 1vw;
+    }
+    .filter,.addToDo{
+        font-size: 1.3rem;
+    }
+}

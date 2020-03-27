@@ -1,0 +1,165 @@
+$primary-color: red;
+$secondary-color:green;
+$white: white;
+
+%extend_section{
+    width: 100%;
+    height: 25%; 
+}
+
+%extend_input{
+    border: none;
+    background-color: black;
+    color: #99ff99;
+    background: none;
+    margin-left: 5px;
+    font-style: italic;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.active{
+    animation: refresh 500ms ease-in-out;
+}
+
+.move{
+    animation: slide 750ms ease-in-out;
+}
+
+.delete{
+    animation: delete 600ms ease-in-out;
+}
+
+
+
+
+body,html,.container{
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    color: $white;
+    font-family: 'Libre Franklin', sans-serif;
+    background-image: url(images/yann-allegre-E-1LUGhTkzo-unsplash.jpg);
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.head_section{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    border-bottom: 3px solid $white;
+    font-family: 'Play', sans-serif;
+    .fa-sync{
+        align-self: flex-end;
+        position: fixed;
+        margin: 5px 5px 0 0;
+        font-size: 1.5rem;
+        &:hover{
+            transform: scale(1.2);
+            color: $primary-color;
+            transition: 500ms;
+            cursor: pointer;
+            transform: rotate(360deg)
+        }
+    }
+    .time{
+        font-size: 2rem;
+        margin: 3vh 0 0 5vw;
+        align-self: flex-start;
+    }
+}
+
+
+form{
+    border: 5px solid white;
+    height: 75%;
+    width: 70%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    background-image: url(images/yann-allegre-E-1LUGhTkzo-unsplash.jpg);
+    border-radius: 10px;
+    
+    
+    .list{
+        height: 60%;
+        width: 100%;
+        list-style: none;
+        display: flex;
+        flex-flow: column;
+        overflow: auto;
+        margin-top: 10%;
+        
+        
+        
+        li{
+            width: 75%;
+            margin: 5px 0 5px 0;
+            font-size: 1.5rem;
+            text-align: center;
+            color: white;
+            cursor: pointer;
+            &:hover{
+                transform: scale(1.04);
+                transition: 300ms;
+            }
+
+            .fa-circle-thin{
+                float: left;
+            }
+            .fa-check-circle{
+                float: left;
+            }
+        }
+    }
+    
+    .fa-trash{
+       float: right;
+    }
+    .fa-trash:hover{
+        color: $primary-color;
+    }
+    
+    .head_section{
+        @extend %extend_section;
+    }
+    .control_section{
+        @extend %extend_section;
+        height: (25%)/2.5;
+        border-top: 3px solid $white;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        justify-content: center;
+        align-items: center;
+        .fa-plus-circle{
+            font-size: 2rem;
+            color: lighten(green,40%);
+            cursor: pointer;
+            margin: 0 5vw 0 20vw;
+            &:hover{
+                transform: scale(0.98);
+                transition: 300ms;
+            }
+        }
+        .addToDo{
+            @extend %extend_input;
+
+        }
+        .filter{
+            @extend %extend_input;
+        }
+    }
+}
+
+@import "media";
+
+@import "keyframe"
